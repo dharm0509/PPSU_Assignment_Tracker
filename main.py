@@ -1,119 +1,130 @@
+import os
+import re
+import json
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime
+from urllib.parse import urlparse, parse_qs
+from dotenv import load_dotenv
 
+# CONFIG
 LOGIN_URL = "https://erp.ppsu.ac.in/Login.aspx"
+LMS_DASHBOARD_URL = "https://erp.ppsu.ac.in/StudentPanel/LMS/LMS_ContentStudentDashboard.aspx"
+SUBJECT_CONTENT_URL = "https://erp.ppsu.ac.in/StudentPanel/LMS/LMS_Content_SubjectWiseContentList.aspx"
 
-headers = {
-    "User-Agent": "Mozilla/5.0"
-}
+ASSIGNMENTS_JSON = "assignments.json"
+LOG_FILE = "run_log.json"
+
+# STRUCTURED LOGGER (JSON)
+_logs = []
+
+def log(level, event, message, extra=None):
+    entry = {
+        "time": datetime.utcnow().isoformat() + "Z",
+        "level": level,
+        "event": event,
+        "message": message
+    }
+    if extra:
+        entry["extra"] = extra
+    _logs.append(entry)
+
+# ENVIRONMENT VARIABLES
+load_dotenv()
+ERP_USERNAME = os.environ.get("ERP_USERNAME")
+ERP_PASSWORD = os.environ.get("ERP_PASSWORD")
+
+if not ERP_USERNAME or not ERP_PASSWORD:
+    log("ERROR", "env_missing", "ERP_USERNAME or ERP_PASSWORD not set")
+    raise RuntimeError("Missing ERP credentials in environment variables")
+
+# DATE NORMALIZATION
+def normalize_datetime(date_str):
+    """
+    Converts '17-12-2025 12:00 PM' -> '2025-12-17T12:00:00'
+    """
+    try:
+        dt = datetime.strptime(date_str, "%d-%m-%Y %I:%M %p")
+        return dt.isoformat()
+    except Exception:
+        return None
+
+# LOGIN
+log("INFO", "login_start", "Attempting ERP login")
+
 session = requests.Session()
+resp = session.get(LOGIN_URL)
 
-r = session.get(LOGIN_URL, headers=headers)
-soup = BeautifulSoup(r.text, "html.parser")
+soup = BeautifulSoup(resp.text, "html.parser")
 
-hidden_fields = {}
-
-for inp in soup.find_all("input", type="hidden"):
-    if inp.get("name"):
-        hidden_fields[inp["name"]] = inp.get("value", "")
-
-payload = hidden_fields.copy()
+payload = {
+    inp["name"]: inp.get("value", "")
+    for inp in soup.select("input[type=hidden]")
+}
 
 payload.update({
     "rblRole": "Student",
-    "txtUserName": "22se02ml077@ppsu.ac.in",
-    "txtPassword": "Hamilton@44",
+    "txtUserName": ERP_USERNAME,
+    "txtPassword": ERP_PASSWORD,
     "btnLogin": "Login"
 })
 
-resp = session.post(LOGIN_URL, headers=headers, data=payload)
+login_resp = session.post(LOGIN_URL, data=payload)
 
-if "StudentDashboard.aspx" in resp.text:
-    print("✅ LOGIN SUCCESS")
-elif "Validation of viewstate MAC failed" in resp.text:
-    print("❌ VIEWSTATE BROKEN")
-else:
-    print("❌ LOGIN FAILED")
+if "StudentDashboard.aspx" not in login_resp.text:
+    log("ERROR", "login_failed", "ERP login failed")
+    raise RuntimeError("ERP login failed")
 
-lms_url = "https://erp.ppsu.ac.in/StudentPanel/LMS/LMS_ContentStudentDashboard.aspx"
+log("INFO", "login_success", "ERP login successful")
 
-lms_resp = session.get(
-    lms_url,
-    headers={
-        "User-Agent": "Mozilla/5.0",
-        "Referer": "https://erp.ppsu.ac.in/StudentPanel/StudentDashboard.aspx"
-    }
-)
+# FETCH SUBJECTS
+log("INFO", "fetch_subjects", "Fetching LMS dashboard")
 
-print(lms_resp.status_code)
+resp = session.get(LMS_DASHBOARD_URL)
+soup = BeautifulSoup(resp.text, "html.parser")
 
-from bs4 import BeautifulSoup
-from urllib.parse import urlparse, parse_qs
-import re
-
-soup = BeautifulSoup(lms_resp.text, "html.parser")
 subjects = []
 
-for a in soup.select("a[href*='LMS_Content_SubjectWiseContentList.aspx']"):
-    href = a["href"]
-    qs = parse_qs(urlparse(href).query)
+for a in soup.find_all("a", href=True):
+    if "LMS_Content_SubjectWiseContentList.aspx" not in a["href"]:
+        continue
 
-    raw_text = a.get_text(" ", strip=True)
+    qs = parse_qs(urlparse(a["href"]).query)
 
-    # Extract subject code + name
-    match = re.search(r"[A-Z]{4}\d{4}\s*-\s*.+", raw_text)
-    subject_name = match.group().strip() if match else raw_text
+    raw_name = a.get_text(strip=True)
+    clean = re.search(r"[A-Z]{4}\d{4}\s*-\s*.+", raw_name)
+    subject_name = clean.group(0) if clean else raw_name
 
     subjects.append({
-        "subject_id": qs.get("SubjectID", [""])[0],
-        "academic_session_id": qs.get("AcademicSessionID", [""])[0],
-        "semester": qs.get("Semester", [""])[0],
-        "subject_name": subject_name
+        "subject_name": subject_name,
+        "subject_id": qs["SubjectID"][0],
+        "academic_session_id": qs["AcademicSessionID"][0],
+        "semester": qs["Semester"][0]
     })
 
-for s in subjects:
-    print(s)
+log("INFO", "subjects_found", f"{len(subjects)} subjects found")
 
-def fetch_subject_page(session, subject):
-    url = (
-        "https://erp.ppsu.ac.in/StudentPanel/LMS/"
-        "LMS_Content_SubjectWiseContentList.aspx?"
-        f"SubjectID={subject['subject_id']}&"
-        f"AcademicSessionID={subject['academic_session_id']}&"
-        f"Semester={subject['semester']}"
-    )
-
-    resp = session.get(
-        url,
-        headers={
-            "User-Agent": "Mozilla/5.0",
-            "Referer": "https://erp.ppsu.ac.in/StudentPanel/LMS/LMS_ContentStudentDashboard.aspx"
-        }
-    )
-
-    return resp.text
-
+# FETCH SUBJECT PAGES
 subject_pages = {}
 
 for subject in subjects:
-    html = fetch_subject_page(session, subject)
+    resp = session.get(
+        SUBJECT_CONTENT_URL,
+        params={
+            "SubjectID": subject["subject_id"],
+            "AcademicSessionID": subject["academic_session_id"],
+            "Semester": subject["semester"]
+        }
+    )
+    subject_pages[subject["subject_name"]] = resp.text
 
-    subject_pages[subject["subject_name"]] = html
-    print(f"Fetched: {subject['subject_name']} | Size: {len(html)}")
-
-from bs4 import BeautifulSoup
-from urllib.parse import urlparse, parse_qs
-
-from bs4 import BeautifulSoup
-from urllib.parse import urlparse, parse_qs
-
+# EXTRACT ASSIGNMENTS
 def extract_assignments_from_assignment_table(subject_name):
     html = subject_pages.get(subject_name)
     if not html:
-        return []  # safety
+        return []
 
     soup = BeautifulSoup(html, "html.parser")
-
     tables = soup.find_all("table", id="tblSubjectWiseContentDetails")
 
     assignment_table = None
@@ -124,29 +135,22 @@ def extract_assignments_from_assignment_table(subject_name):
             continue
 
         ths = header_row.find_all("th")
-        if len(ths) < 2:
-            continue
-
-        second_th_text = ths[1].get_text(strip=True)
-
-        if second_th_text == "Assignment details":
+        if len(ths) > 1 and ths[1].get_text(strip=True) == "Assignment details":
             assignment_table = table
-            break   # ✅ stop once found
+            break
 
-    # ✅ NO ASSIGNMENTS CASE
     if assignment_table is None:
-        return []   # return empty list instead of error
+        return []
 
     assignments = []
 
-    rows = assignment_table.find_all("tr")
+    rows = assignment_table.find_all("tr")[1:]
 
-    for row in rows[1:]:  # skip header
+    for row in rows:
         tds = row.find_all("td")
         if len(tds) < 10:
             continue
 
-        # 1️⃣ Title + ContentID
         title_link = tds[1].find("a")
         title = title_link.get_text(strip=True) if title_link else None
 
@@ -155,29 +159,60 @@ def extract_assignments_from_assignment_table(subject_name):
             qs = parse_qs(urlparse(title_link["href"]).query)
             content_id = qs.get("ContentID", [None])[0]
 
-        # 2️⃣ Updated on
-        updated_on = tds[3].get_text(" ", strip=True)
-
-        # 3️⃣ Due date
-        due_date = tds[4].get_text(" ", strip=True)
-
-        # 4️⃣ Prepared by
-        prepared_by = tds[5].get_text(strip=True)
-
-        # 5️⃣ Submission status
-        submission_status = tds[9].get_text(" ", strip=True)
+        updated_raw = tds[3].get_text(" ", strip=True)
+        due_raw = tds[4].get_text(" ", strip=True)
 
         assignments.append({
             "subject_name": subject_name,
             "title": title,
             "content_id": content_id,
-            "updated_on": updated_on,
-            "due_date": due_date,
-            "prepared_by": prepared_by,
-            "submission_status": submission_status
+            "updated_on": normalize_datetime(updated_raw),
+            "due_date": normalize_datetime(due_raw),
+            "prepared_by": tds[5].get_text(strip=True),
+            "submission_status": tds[9].get_text(" ", strip=True)
         })
+
+    log("INFO", "assignments_extracted", "Assignments extracted", {
+        "subject": subject_name,
+        "count": len(assignments)
+    })
 
     return assignments
 
-t =extract_assignments_from_assignment_table("SECE4060 - Artificial Inteligence of Things")
-print(t)
+# COLLECT ALL ASSIGNMENTS
+all_assignments = []
+
+for subject in subjects:
+    all_assignments.extend(
+        extract_assignments_from_assignment_table(subject["subject_name"])
+    )
+
+# BUILD JSON
+data = {
+    "updated_at": datetime.utcnow().isoformat() + "Z",
+    "assignments": []
+}
+
+for a in all_assignments:
+    if "submitted" in a["submission_status"].lower():
+        continue
+
+    data["assignments"].append({
+        "subject": a["subject_name"],
+        "title": a["title"],
+        "due": a["due_date"],
+        "content_id": a["content_id"]
+    })
+
+data["count"] = len(data["assignments"])
+
+with open(ASSIGNMENTS_JSON, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2)
+
+log("INFO", "json_written", "assignments.json written", {
+    "count": data["count"]
+})
+
+# WRITE LOG FILE
+with open(LOG_FILE, "w", encoding="utf-8") as f:
+    json.dump(_logs, f, indent=2)

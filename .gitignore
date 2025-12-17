@@ -1,0 +1,13 @@
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Generated files
+assignments.json
+run_log.json
+
+# Python cache
+__pycache__/
+*.pyc
