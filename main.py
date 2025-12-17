@@ -239,7 +239,7 @@ def main():
     with open(LOG_FILE, "w", encoding="utf-8") as f:
         json.dump(_logs, f, indent=2)
 
-    git_auto_commit()
+    # git_auto_commit()
 
 if __name__ == "__main__":
     # CONFIG
