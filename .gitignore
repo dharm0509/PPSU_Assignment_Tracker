@@ -5,8 +5,8 @@ venv/
 .env
 
 # # Generated files
-# assignments.json
-# run_log.json
+assignments.json
+run_log.json
 
 # Python cache
 __pycache__/
