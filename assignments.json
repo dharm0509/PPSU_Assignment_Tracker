@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025y12M20d16h10m00s",
+  "updated_at": "2025y12M21d14h53m12s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -18,13 +18,7 @@
       "title": "Practical-2",
       "due": "2025y12M25d00h00m00s",
       "content_id": "i5TL-IuNGjg"
-    },
-    {
-      "subject": "SECE4070 - Computer Vision",
-      "title": "Practical 1",
-      "due": "2025y12M22d00h00m00s",
-      "content_id": "0ZTqT938hJQ"
     }
   ],
-  "count": 4
+  "count": 3
 }
