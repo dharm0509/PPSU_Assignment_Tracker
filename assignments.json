@@ -1,12 +1,6 @@
 {
-  "updated_at": "2025y12M26d16h13m13s",
+  "updated_at": "2025y12M27d11h51m59s",
   "assignments": [
-    {
-      "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "Practical No - 2",
-      "due": "2025y12M27d12h00m00s",
-      "content_id": "6sGdedSGNQ4"
-    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "Practical No-1",
@@ -20,5 +14,5 @@
       "content_id": "i5TL-IuNGjg"
     }
   ],
-  "count": 3
+  "count": 2
 }
