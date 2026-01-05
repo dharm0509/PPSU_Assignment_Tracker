@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y01M05d16h18m11s",
+  "updated_at": "2026y01M05d22h43m16s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -15,12 +15,6 @@
     },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "Practical No-3",
-      "due": "2026y01M06d00h00m00s",
-      "content_id": "5Jrf-F1-xcA"
-    },
-    {
-      "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "Practical No-1",
       "due": "2025y12M17d12h00m00s",
       "content_id": "hVwxAMJNnWE"
@@ -32,5 +26,5 @@
       "content_id": "KVcC-ofSov8"
     }
   ],
-  "count": 5
+  "count": 4
 }
