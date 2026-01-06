@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026y01M05d22h43m16s",
+  "updated_at": "2026y01M06d16h16m27s",
   "assignments": [
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "Practical No - 4 : Interfacing and programming with Actuators",
+      "due": "2026y01M15d20h00m00s",
+      "content_id": "$GzkePF9Bnw"
+    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "PRACTICAL NO 02.",
@@ -21,10 +27,16 @@
     },
     {
       "subject": "SECE4070 - Computer Vision",
+      "title": "Practical 3",
+      "due": "2026y01M10d12h00m00s",
+      "content_id": "M4wmxY0jqQc"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
       "title": "Assignement 1",
       "due": "2026y01M10d12h00m00s",
       "content_id": "KVcC-ofSov8"
     }
   ],
-  "count": 4
+  "count": 6
 }
