@@ -1,23 +1,11 @@
 {
-  "updated_at": "2026y01M08d16h16m50s",
+  "updated_at": "2026y01M08d23h35m50s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "Practical No - 4 : Interfacing and programming with Actuators",
       "due": "2026y01M15d20h00m00s",
       "content_id": "$GzkePF9Bnw"
-    },
-    {
-      "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "PRACTICAL NO 02.",
-      "due": "2026y01M09d00h00m00s",
-      "content_id": "1OADuJmPvPM"
-    },
-    {
-      "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "practical no 01.",
-      "due": "2026y01M09d00h00m00s",
-      "content_id": "BFkYOfrOH2Y"
     },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -38,5 +26,5 @@
       "content_id": "KVcC-ofSov8"
     }
   ],
-  "count": 6
+  "count": 4
 }
