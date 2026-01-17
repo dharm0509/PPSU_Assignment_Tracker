@@ -1,40 +1,40 @@
 [
   {
-    "time": "2026-01-17T10:41:13.729292Z",
+    "time": "2026-01-17T10:44:04.804226Z",
     "level": "INFO",
     "event": "login_start",
     "message": "Attempting ERP login"
   },
   {
-    "time": "2026-01-17T10:41:18.037412Z",
+    "time": "2026-01-17T10:44:15.900889Z",
     "level": "INFO",
     "event": "login_success",
     "message": "ERP login successful"
   },
   {
-    "time": "2026-01-17T10:41:18.037423Z",
+    "time": "2026-01-17T10:44:15.900899Z",
     "level": "INFO",
     "event": "fetch_subjects",
     "message": "Fetching LMS dashboard"
   },
   {
-    "time": "2026-01-17T10:41:18.351654Z",
+    "time": "2026-01-17T10:44:16.477387Z",
     "level": "INFO",
     "event": "subjects_found",
     "message": "6 subjects found"
   },
   {
-    "time": "2026-01-17T10:41:20.554017Z",
+    "time": "2026-01-17T10:44:18.913246Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
     "extra": {
       "subject": "SECE4060 - Artificial Inteligence of Things",
-      "count": 6
+      "count": 4
     }
   },
   {
-    "time": "2026-01-17T10:41:20.597937Z",
+    "time": "2026-01-17T10:44:18.958319Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -44,12 +44,22 @@
     }
   },
   {
-    "time": "2026-01-17T10:41:20.718738Z",
+    "time": "2026-01-17T10:44:19.021695Z",
+    "level": "INFO",
+    "event": "assignments_extracted",
+    "message": "Assignments extracted",
+    "extra": {
+      "subject": "SECE4080 - Natural Language Processing",
+      "count": 7
+    }
+  },
+  {
+    "time": "2026-01-17T10:44:19.112965Z",
     "level": "INFO",
     "event": "json_written",
     "message": "assignments.json written",
     "extra": {
-      "count": 2
+      "count": 9
     }
   }
 ]

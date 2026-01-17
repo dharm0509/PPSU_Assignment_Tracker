@@ -1,18 +1,60 @@
 {
-  "updated_at": "2026y01M17d16h11m20s",
+  "updated_at": "2026y01M17d16h14m19s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "Practical No - 4 : Interfacing and programming with Actuators",
-      "due": "2026y01M15d20h00m00s",
-      "content_id": "$GzkePF9Bnw"
+      "title": "PRACTICAL NO 02.",
+      "due": "2026y01M09d00h00m00s",
+      "content_id": "1OADuJmPvPM"
+    },
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "practical no 01.",
+      "due": "2026y01M09d00h00m00s",
+      "content_id": "BFkYOfrOH2Y"
+    },
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "Practical No - 2",
+      "due": "2025y12M31d12h00m00s",
+      "content_id": "6sGdedSGNQ4"
     },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "Practical No-1",
-      "due": "2025y12M17d12h00m00s",
-      "content_id": "hVwxAMJNnWE"
+      "due": "2025y12M19d12h00m00s",
+      "content_id": "EbLFu5$LUKI"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
+      "title": "Assignement 1",
+      "due": "2026y01M10d12h00m00s",
+      "content_id": "KVcC-ofSov8"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
+      "title": "Tools & Libraries",
+      "due": "2025y12M24d12h00m00s",
+      "content_id": "qwCVQxJnerE"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
+      "title": "N-gram analysis of text",
+      "due": "2026y01M31d23h00m00s",
+      "content_id": "wO494RTUojg"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
+      "title": "Text Normalization",
+      "due": "2026y01M03d21h00m00s",
+      "content_id": "DO4-vRP0Idg"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
+      "title": "Introduction to NLP and related packages in Python",
+      "due": "2026y01M03d23h00m00s",
+      "content_id": "5PX$dAvkxUw"
     }
   ],
-  "count": 2
+  "count": 9
 }
