@@ -1,12 +1,6 @@
 {
-  "updated_at": "2026y01M20d16h25m51s",
+  "updated_at": "2026y01M21d16h26m45s",
   "assignments": [
-    {
-      "subject": "SECE4060 - Artificial Inteligence of Things",
-      "title": "PRACTICAL NO 02.",
-      "due": "2026y01M09d00h00m00s",
-      "content_id": "1OADuJmPvPM"
-    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "practical no 01.",
@@ -54,13 +48,7 @@
       "title": "Text Normalization",
       "due": "2026y01M03d21h00m00s",
       "content_id": "DO4-vRP0Idg"
-    },
-    {
-      "subject": "SECE4080 - Natural Language Processing",
-      "title": "Introduction to NLP and related packages in Python",
-      "due": "2026y01M31d23h00m00s",
-      "content_id": "5PX$dAvkxUw"
     }
   ],
-  "count": 10
+  "count": 8
 }
