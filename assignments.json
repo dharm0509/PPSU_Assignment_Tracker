@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y02M02d16h51m51s",
+  "updated_at": "2026y02M03d16h38m48s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -21,6 +21,12 @@
     },
     {
       "subject": "SECE4070 - Computer Vision",
+      "title": "Practical 4",
+      "due": "2026y02M07d12h00m00s",
+      "content_id": "Nz3aiXz4q-Y"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
       "title": "Assignement 1",
       "due": "2026y01M10d12h00m00s",
       "content_id": "KVcC-ofSov8"
@@ -30,6 +36,12 @@
       "title": "Tools & Libraries",
       "due": "2025y12M24d12h00m00s",
       "content_id": "qwCVQxJnerE"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
+      "title": "Implementation of word sense disambiguation models",
+      "due": "2026y02M24d23h00m00s",
+      "content_id": "oR-ds3yMc8w"
     },
     {
       "subject": "SECE4080 - Natural Language Processing",
@@ -50,5 +62,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 8
+  "count": 10
 }
