@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026y02M09d16h56m19s",
+  "updated_at": "2026y02M11d16h56m10s",
   "assignments": [
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "PRACTICAL NO-03",
+      "due": "2026y02M18d00h00m00s",
+      "content_id": "cmO1mhbm0RE"
+    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "PRACTICAL NO 02.",
@@ -27,9 +33,21 @@
     },
     {
       "subject": "SECE4070 - Computer Vision",
+      "title": "Create Hybrid segmentation",
+      "due": "2026y02M14d12h00m00s",
+      "content_id": "wuTE4f4mDXM"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
       "title": "Practical 4",
-      "due": "2026y02M07d12h00m00s",
+      "due": "2026y02M14d12h00m00s",
       "content_id": "Nz3aiXz4q-Y"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
+      "title": "Assignment 2",
+      "due": "2026y02M14d00h00m00s",
+      "content_id": "FFmas$Sm8U0"
     },
     {
       "subject": "SECE4070 - Computer Vision",
@@ -68,5 +86,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 11
+  "count": 14
 }

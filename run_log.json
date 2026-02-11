@@ -1,50 +1,50 @@
 [
   {
-    "time": "2026-02-09T11:26:09.919301Z",
+    "time": "2026-02-11T11:26:01.657326Z",
     "level": "INFO",
     "event": "login_start",
     "message": "Attempting ERP login"
   },
   {
-    "time": "2026-02-09T11:26:15.680011Z",
+    "time": "2026-02-11T11:26:06.840707Z",
     "level": "INFO",
     "event": "login_success",
     "message": "ERP login successful"
   },
   {
-    "time": "2026-02-09T11:26:15.680026Z",
+    "time": "2026-02-11T11:26:06.840729Z",
     "level": "INFO",
     "event": "fetch_subjects",
     "message": "Fetching LMS dashboard"
   },
   {
-    "time": "2026-02-09T11:26:16.290183Z",
+    "time": "2026-02-11T11:26:07.418629Z",
     "level": "INFO",
     "event": "subjects_found",
     "message": "7 subjects found"
   },
   {
-    "time": "2026-02-09T11:26:19.067781Z",
+    "time": "2026-02-11T11:26:10.189673Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
     "extra": {
       "subject": "SECE4060 - Artificial Inteligence of Things",
-      "count": 4
+      "count": 5
     }
   },
   {
-    "time": "2026-02-09T11:26:19.106596Z",
+    "time": "2026-02-11T11:26:10.244706Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
     "extra": {
       "subject": "SECE4070 - Computer Vision",
-      "count": 6
+      "count": 8
     }
   },
   {
-    "time": "2026-02-09T11:26:19.174081Z",
+    "time": "2026-02-11T11:26:10.323596Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -54,12 +54,12 @@
     }
   },
   {
-    "time": "2026-02-09T11:26:19.271072Z",
+    "time": "2026-02-11T11:26:10.440328Z",
     "level": "INFO",
     "event": "json_written",
     "message": "assignments.json written",
     "extra": {
-      "count": 11
+      "count": 14
     }
   }
 ]
