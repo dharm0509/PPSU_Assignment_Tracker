@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y02M13d16h39m33s",
+  "updated_at": "2026y02M14d16h24m55s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -63,6 +63,12 @@
     },
     {
       "subject": "SECE4080 - Natural Language Processing",
+      "title": "WordNet usage-based experiment",
+      "due": "2026y02M28d23h00m00s",
+      "content_id": "S0J$VPtuKCs"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
       "title": "Implementation of word sense disambiguation models",
       "due": "2026y02M24d23h00m00s",
       "content_id": "oR-ds3yMc8w"
@@ -86,5 +92,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 14
+  "count": 15
 }
