@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y02M16d16h53m09s",
+  "updated_at": "2026y02M17d16h54m05s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -63,6 +63,12 @@
     },
     {
       "subject": "SECE4080 - Natural Language Processing",
+      "title": "Named Entity Recognition experiment",
+      "due": "2026y03M14d23h00m00s",
+      "content_id": "70109W1Ql6E"
+    },
+    {
+      "subject": "SECE4080 - Natural Language Processing",
       "title": "WordNet usage-based experiment",
       "due": "2026y02M28d23h00m00s",
       "content_id": "S0J$VPtuKCs"
@@ -92,5 +98,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 15
+  "count": 16
 }
