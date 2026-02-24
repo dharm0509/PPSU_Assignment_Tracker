@@ -1,30 +1,30 @@
 [
   {
-    "time": "2026-02-23T11:22:40.814632Z",
+    "time": "2026-02-24T11:23:29.429268Z",
     "level": "INFO",
     "event": "login_start",
     "message": "Attempting ERP login"
   },
   {
-    "time": "2026-02-23T11:22:47.144683Z",
+    "time": "2026-02-24T11:23:36.143659Z",
     "level": "INFO",
     "event": "login_success",
     "message": "ERP login successful"
   },
   {
-    "time": "2026-02-23T11:22:47.144698Z",
+    "time": "2026-02-24T11:23:36.143671Z",
     "level": "INFO",
     "event": "fetch_subjects",
     "message": "Fetching LMS dashboard"
   },
   {
-    "time": "2026-02-23T11:22:47.497323Z",
+    "time": "2026-02-24T11:23:36.494661Z",
     "level": "INFO",
     "event": "subjects_found",
     "message": "7 subjects found"
   },
   {
-    "time": "2026-02-23T11:22:50.237687Z",
+    "time": "2026-02-24T11:23:39.190691Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -34,17 +34,17 @@
     }
   },
   {
-    "time": "2026-02-23T11:22:50.292978Z",
+    "time": "2026-02-24T11:23:39.247828Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
     "extra": {
       "subject": "SECE4070 - Computer Vision",
-      "count": 8
+      "count": 9
     }
   },
   {
-    "time": "2026-02-23T11:22:50.384013Z",
+    "time": "2026-02-24T11:23:39.332828Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -54,12 +54,12 @@
     }
   },
   {
-    "time": "2026-02-23T11:22:50.500950Z",
+    "time": "2026-02-24T11:23:39.446346Z",
     "level": "INFO",
     "event": "json_written",
     "message": "assignments.json written",
     "extra": {
-      "count": 16
+      "count": 17
     }
   }
 ]

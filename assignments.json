@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y02M23d16h52m50s",
+  "updated_at": "2026y02M24d16h53m39s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -33,8 +33,14 @@
     },
     {
       "subject": "SECE4070 - Computer Vision",
+      "title": "Object Recognition - Practical of 5,6,7,8",
+      "due": "2026y03M30d12h00m00s",
+      "content_id": "Ba8Khbw17k8"
+    },
+    {
+      "subject": "SECE4070 - Computer Vision",
       "title": "Create Hybrid segmentation",
-      "due": "2026y02M14d12h00m00s",
+      "due": "2026y02M28d12h00m00s",
       "content_id": "wuTE4f4mDXM"
     },
     {
@@ -98,5 +104,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 16
+  "count": 17
 }
