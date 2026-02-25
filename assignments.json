@@ -1,10 +1,16 @@
 {
-  "updated_at": "2026y02M24d16h53m39s",
+  "updated_at": "2026y02M25d16h53m55s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "PRACTICAL NO-04(INTERFACING AND PROGRAMMING OF ACTUACTORS).",
+      "due": "2026y03M05d00h00m00s",
+      "content_id": "oaX9bXk97HQ"
+    },
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "PRACTICAL NO-03",
-      "due": "2026y02M18d00h00m00s",
+      "due": "2026y02M25d16h00m00s",
       "content_id": "cmO1mhbm0RE"
     },
     {
@@ -104,5 +110,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 17
+  "count": 18
 }
