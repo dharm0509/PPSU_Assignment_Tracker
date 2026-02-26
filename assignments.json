@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026y02M25d16h53m55s",
+  "updated_at": "2026y02M26d16h53m56s",
   "assignments": [
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "practical no -05(walk through existing library for erp8266. configure esp8266 in station and access mode.",
+      "due": "2026y03M05d00h00m00s",
+      "content_id": "NIQB-8b8kF4"
+    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "PRACTICAL NO-04(INTERFACING AND PROGRAMMING OF ACTUACTORS).",
@@ -110,5 +116,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 18
+  "count": 19
 }
