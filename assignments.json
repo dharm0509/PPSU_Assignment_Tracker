@@ -1,6 +1,18 @@
 {
-  "updated_at": "2026y03M31d16h58m01s",
+  "updated_at": "2026y04M01d17h00m31s",
   "assignments": [
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "Experimenting with Blynk & Arduino IoT Cloud",
+      "due": "2026y04M01d13h00m00s",
+      "content_id": "wU7795ZeggY"
+    },
+    {
+      "subject": "SECE4060 - Artificial Inteligence of Things",
+      "title": "Develop an online server",
+      "due": "2026y04M01d13h00m00s",
+      "content_id": "WLFju50pvnw"
+    },
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
       "title": "Develop local offline server using HTTP protocol - Develop local offline server using HTTP protocol",
@@ -152,5 +164,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 25
+  "count": 27
 }
