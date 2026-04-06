@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026y04M05d16h32m36s",
+  "updated_at": "2026y04M06d16h58m50s",
   "assignments": [
     {
       "subject": "SECE4060 - Artificial Inteligence of Things",
@@ -66,12 +66,6 @@
       "title": "Practical No-1",
       "due": "2025y12M19d12h00m00s",
       "content_id": "EbLFu5$LUKI"
-    },
-    {
-      "subject": "SECE4070 - Computer Vision",
-      "title": "Lab Manual",
-      "due": "2026y04M04d12h00m00s",
-      "content_id": "7yq6X9iQ-T8"
     },
     {
       "subject": "SECE4070 - Computer Vision",
@@ -164,5 +158,5 @@
       "content_id": "DO4-vRP0Idg"
     }
   ],
-  "count": 27
+  "count": 26
 }
