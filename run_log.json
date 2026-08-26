@@ -1,30 +1,30 @@
 [
   {
-    "time": "2026-08-25T11:00:23.332691Z",
+    "time": "2026-08-26T11:02:37.436361Z",
     "level": "INFO",
     "event": "login_start",
     "message": "Attempting ERP login"
   },
   {
-    "time": "2026-08-25T11:00:30.763308Z",
+    "time": "2026-08-26T11:02:42.584485Z",
     "level": "INFO",
     "event": "login_success",
     "message": "ERP login successful"
   },
   {
-    "time": "2026-08-25T11:00:30.763320Z",
+    "time": "2026-08-26T11:02:42.584496Z",
     "level": "INFO",
     "event": "fetch_subjects",
     "message": "Fetching LMS dashboard"
   },
   {
-    "time": "2026-08-25T11:00:31.587861Z",
+    "time": "2026-08-26T11:02:43.150502Z",
     "level": "INFO",
     "event": "subjects_found",
     "message": "7 subjects found"
   },
   {
-    "time": "2026-08-25T11:00:35.730884Z",
+    "time": "2026-08-26T11:02:47.069889Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -34,7 +34,7 @@
     }
   },
   {
-    "time": "2026-08-25T11:00:35.833503Z",
+    "time": "2026-08-26T11:02:47.167527Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -44,7 +44,7 @@
     }
   },
   {
-    "time": "2026-08-25T11:00:35.923619Z",
+    "time": "2026-08-26T11:02:47.258422Z",
     "level": "INFO",
     "event": "assignments_extracted",
     "message": "Assignments extracted",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "time": "2026-08-25T11:00:36.054551Z",
+    "time": "2026-08-26T11:02:47.388687Z",
     "level": "INFO",
     "event": "json_written",
     "message": "assignments.json written",
